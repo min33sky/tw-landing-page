@@ -3,7 +3,6 @@ import Logo from './img/logo.svg';
 import IllustrationIntro from './img/illustration-intro.svg';
 import AvatarAnisha from './img/avatar-anisha.png';
 import AvatarRichard from './img/avatar-richard.png';
-import AvatarShanai from './img/avatar-shanai.png';
 import AvatarAli from './img/avatar-ali.png';
 import LogoWhite from './img/logo-white.svg';
 import FacebookIcon from './img/icon-facebook.svg';
@@ -23,32 +22,32 @@ function App() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="pt-2">
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="Logo" />
           </div>
 
           {/* Menu Items */}
           <div className="hidden space-x-6 md:flex">
-            <a href="#" className="hover:text-darkGrayishBlue">
+            <a href="#/pricing" className="hover:text-darkGrayishBlue">
               Pricing
             </a>
-            <a href="#" className="hover:text-darkGrayishBlue">
+            <a href="#/product" className="hover:text-darkGrayishBlue">
               Product
             </a>
-            <a href="#" className="hover:text-darkGrayishBlue">
+            <a href="#/about" className="hover:text-darkGrayishBlue">
               About Us
             </a>
-            <a href="#" className="hover:text-darkGrayishBlue">
+            <a href="#/careers" className="hover:text-darkGrayishBlue">
               Careers
             </a>
-            <a href="#" className="hover:text-darkGrayishBlue">
+            <a href="#/community" className="hover:text-darkGrayishBlue">
               Community
             </a>
           </div>
 
           {/* Button */}
           <a
-            href="#"
-            className="hidden rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight md:block"
+            href="#/start"
+            className="hidden rounded-full bg-brightRed p-3 px-6 text-white transition-colors hover:bg-brightRedLight active:ring-2 active:ring-brightRed md:block"
           >
             Get Started
           </a>
@@ -57,7 +56,7 @@ function App() {
           <button
             id="menu-btn"
             onClick={() => setOpenMenu((prev) => !prev)}
-            className={`hamburger block focus:outline-none md:hidden ${openMenu ? 'open' : ''}`}
+            className={`hamburger block outline-none md:hidden ${openMenu ? 'open' : ''}`}
           >
             <span className="hamburger-top"></span>
             <span className="hamburger-middle"></span>
@@ -69,16 +68,41 @@ function App() {
         <div className="md:hidden">
           <div
             id="menu"
-            className={`absolute left-6 right-6 mt-10 flex-col items-center space-y-6 self-end bg-white
-            py-8 font-bold drop-shadow-md  sm:w-auto sm:self-center ${
+            className={`absolute left-6 right-6 mt-10 flex-col space-y-2 self-end bg-white py-3
+            font-menu font-bold drop-shadow-md sm:w-auto sm:self-center ${
               openMenu ? 'flex' : 'hidden'
             }`}
           >
-            <a href="#">Pricing</a>
-            <a href="#">Product</a>
-            <a href="#">About us</a>
-            <a href="#">Careers</a>
-            <a href="#">Community</a>
+            <a
+              href="#/pricing"
+              className="block py-2 text-center transition-colors hover:bg-slate-100 active:bg-slate-200"
+            >
+              Pricing
+            </a>
+            <a
+              href="#/product"
+              className="block py-2 text-center transition-colors hover:bg-slate-100 active:bg-slate-200"
+            >
+              Product
+            </a>
+            <a
+              href="#/about"
+              className="block py-2 text-center transition-colors hover:bg-slate-100 active:bg-slate-200"
+            >
+              About us
+            </a>
+            <a
+              href="#/careers"
+              className="block py-2 text-center transition-colors hover:bg-slate-100 active:bg-slate-200"
+            >
+              Careers
+            </a>
+            <a
+              href="#/community"
+              className="block py-2 text-center transition-colors hover:bg-slate-100 active:bg-slate-200"
+            >
+              Community
+            </a>
           </div>
         </div>
       </nav>
@@ -89,17 +113,17 @@ function App() {
         <div className="container mx-auto mt-10 flex flex-col-reverse items-center space-y-0 px-6 md:flex-row md:space-y-0 ">
           {/* Left Item */}
           <div className="mb-32 flex flex-col space-y-12 md:w-1/2">
-            <h1 className="max-w-md text-center text-4xl font-bold md:text-left md:text-5xl">
+            <h1 className="max-w-md text-center font-heading text-4xl font-bold md:text-left md:text-5xl">
               Bring Everyone together to build better products
             </h1>
-            <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
+            <p className="max-w-md text-center text-darkGrayishBlue md:max-w-sm md:text-left">
               Manage makes it simple for software teams to plan day-to-day tasks while keeping the
               larger tam goals in view.
             </p>
             <div className="flex justify-center md:justify-start">
               <a
-                href="#"
-                className="rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
+                href="#/start"
+                className="rounded-full bg-brightRed p-3 px-6 text-white transition-colors hover:bg-brightRedLight active:ring-2 active:ring-brightRed"
               >
                 Get Started
               </a>
@@ -119,10 +143,10 @@ function App() {
         <div className="container mx-auto mt-10 flex flex-col space-y-12 px-4 md:flex-row md:space-y-0">
           {/* What's Different */}
           <div className="flex flex-col space-y-12 md:w-1/2">
-            <h2 className="max-w-md text-center text-4xl font-bold md:text-left">
+            <h2 className="max-w-md text-center font-heading text-4xl font-bold md:max-w-full md:text-left">
               What's different about Manage?
             </h2>
-            <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
+            <p className="text-center text-darkGrayishBlue md:max-w-md  md:text-left">
               Manage provides all the functionality your team needs, without the complexity. Our
               software is tailor-made for modern digital product teams
             </p>
@@ -210,7 +234,9 @@ function App() {
         {/* Container to heading and testm blocks */}
         <div className="mx-auto mt-32 max-w-6xl px-5 text-center">
           {/* Heading */}
-          <h2 className="text-center text-4xl font-bold">What's Different About Manage?</h2>
+          <h2 className="text-center font-heading text-4xl font-bold">
+            What's Different About Manage?
+          </h2>
 
           {/* Testimonials Container */}
           <div className="mt-24 flex flex-col space-y-16 md:flex-row md:space-x-6 md:space-y-0">
@@ -248,8 +274,8 @@ function App() {
           {/* Button */}
           <div className="my-16">
             <a
-              href="#"
-              className="rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
+              href="#/start"
+              className="rounded-full bg-brightRed p-3 px-6 text-white transition-colors hover:bg-brightRedLight active:ring-2 active:ring-brightRed"
             >
               Get Started
             </a>
@@ -267,8 +293,8 @@ function App() {
           </h2>
           {/* Button */}
           <a
-            href="#"
-            className="rounded-full bg-white p-3 px-6 pt-2 text-brightRedLight shadow-2xl hover:bg-gray-500"
+            href="#/start"
+            className="rounded-full bg-white p-3 px-6  text-brightRedLight shadow-2xl transition-colors hover:bg-gray-300 "
           >
             Get Started
           </a>
@@ -292,23 +318,23 @@ function App() {
             {/* Social Links Container */}
             <div className="flex justify-center space-x-4">
               {/* Link1 */}
-              <a href="#">
+              <a href="#/facebook">
                 <img src={FacebookIcon} className="h-8" alt="" />
               </a>
               {/* Link1 */}
-              <a href="#">
+              <a href="#/youtube">
                 <img src={YoutubeIcon} className="h-8" alt="" />
               </a>
               {/* Link1 */}
-              <a href="#">
+              <a href="#/twitter">
                 <img src={TwitterIcon} className="h-8" alt="" />
               </a>
               {/* Link1 */}
-              <a href="#">
+              <a href="#/pinterest">
                 <img src={PinterestIcon} className="h-8" alt="" />
               </a>
               {/* Link1 */}
-              <a href="#">
+              <a href="#/instagram">
                 <img src={InstagramIcon} className="h-8" alt="" />
               </a>
             </div>
@@ -317,27 +343,27 @@ function App() {
           {/* List Container */}
           <div className="flex justify-around space-x-32  ">
             <div className="flex flex-col space-y-3 text-white">
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/home" className="hover:text-brightRed">
                 Home
               </a>
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/pricing" className="hover:text-brightRed">
                 Pricing
               </a>
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/product" className="hover:text-brightRed">
                 Product
               </a>
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/about" className="hover:text-brightRed">
                 About
               </a>
             </div>
             <div className="flex flex-col space-y-3 text-white">
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/careers" className="hover:text-brightRed">
                 Careers
               </a>
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/community" className="hover:text-brightRed">
                 Community
               </a>
-              <a href="#" className="hover:text-brightRed">
+              <a href="#/policy" className="hover:text-brightRed">
                 Privacy Policy
               </a>
             </div>
@@ -352,7 +378,7 @@ function App() {
                   type="text"
                   placeholder="Updated in your inbox"
                 />
-                <button className="rounded-full bg-brightRed px-6 py-2 text-white hover:bg-brightRedLight focus:outline-none">
+                <button className="rounded-full bg-brightRed px-6 py-2 text-white transition-colors hover:bg-brightRedLight focus:outline-none">
                   Go
                 </button>
               </div>
